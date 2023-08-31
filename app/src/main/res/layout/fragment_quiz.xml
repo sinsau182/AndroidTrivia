@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    
+    <data>
+        <variable
+            name="questions"
+            type="com.sinsau.androidtrivia.fragments.QuizFragment" />
+    </data>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".fragments.QuizFragment">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:padding="16dp"
+           android:orientation="vertical">
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="250dp"
+              android:src="@drawable/android_category_simple"/>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+             android:textSize="22sp"
+              android:textStyle="bold"
+              android:text="@{questions.currentQuestion.text}"
+              android:textColor="@color/black"/>
+
+          <RadioGroup
+             android:id="@+id/radioGroup"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+             <RadioButton
+                android:id="@+id/answerFirst"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                android:text="@{questions.answers[0]}"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+             <RadioButton
+                 android:id="@+id/answerSecond"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@{questions.answers[1]}"
+                 android:textSize="18sp"
+                 android:textColor="@color/black"/>
+             <RadioButton
+                 android:id="@+id/answerThird"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@{questions.answers[2]}"
+                 android:textSize="18sp"
+                 android:textColor="@color/black"/>
+             <RadioButton
+                 android:id="@+id/answerFourth"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@{questions.answers[3]}"
+                 android:textSize="18sp"
+                 android:textColor="@color/black"/>
+          </RadioGroup>
+          
+          <com.google.android.material.button.MaterialButton
+              android:id="@+id/submitBtn"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:backgroundTint="@color/purple_700"
+             android:text="Submit"
+             android:textAllCaps="false"
+              android:textColor="@color/white"
+             android:layout_marginTop="16dp"/>
+
+       </LinearLayout>
+   </ScrollView>
+</LinearLayout>
+</layout>
